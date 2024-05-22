@@ -2,9 +2,10 @@ import streamlit as st
 import pandas as pd
 from pymongo import MongoClient
 from st_aggrid import AgGrid, GridOptionsBuilder, GridUpdateMode
+import os
 
 # Setup MongoDB connection
-MONGO_URI = 'mongodb+srv://EduReaderUser:0PMZhtYpkpdNs59o@edureader.11uhgou.mongodb.net/?retryWrites=true&w=majority&appName=EduReader'
+MONGO_URI = os.environ.get("MONGO_URI")
 DB_NAME = 'scraped_data'
 COLLECTION_NAME = 'proctoring'
 
