@@ -56,6 +56,10 @@ if not df.empty:
     gb = GridOptionsBuilder.from_dataframe(df)
     gb.configure_side_bar()
     gb.configure_selection('single')
+    # Configure initial sort
+    gb.configure_default_column(sortable=True)
+    # Assuming the second column is 'Technology', you can modify as needed
+    gb.configure_column(df.columns[1], sort='desc')
     grid_options = gb.build()
 
     # Display the DataFrame using AgGrid with a specific height to make it scrollable
